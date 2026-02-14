@@ -6,9 +6,7 @@
     "FoodDataMixin"
   ],
   "client": [
-    "EntityMixin",
-    "GuiMixin",
-    "RenderTypeMixin"
+    "GuiMixin"
   ],
   "server": [],
   "injectors": {

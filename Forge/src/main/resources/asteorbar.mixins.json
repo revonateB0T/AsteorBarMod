@@ -3,7 +3,6 @@
   "package": "com.afoxxvi.asteorbar.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "EntityMixin",
     "GuiMixin"
   ],
   "server": [],
