@@ -1,6 +1,5 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
@@ -11,13 +10,7 @@ pluginManagement {
         }
         maven { url = 'https://maven.neoforged.net/releases' }
         maven { url = 'https://maven.architectury.dev/' }
-    }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == 'fabric-loom') {
-                useModule("net.fabricmc:fabric-loom:${requested.version}")
-            }
-        }
+        gradlePluginPortal()
     }
 }
 rootProject.name = 'AsteorBarMod'

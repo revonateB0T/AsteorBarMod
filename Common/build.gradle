@@ -1,13 +1,10 @@
 plugins {
     id 'java'
+    id 'fabric-loom' version '1.9.2'
 }
 
-group = mod_group_id
-version = mod_version
-
-java {
-    toolchain.languageVersion = JavaLanguageVersion.of(21)
-}
+group = 'com.afoxxvi'
+version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -17,12 +14,8 @@ repositories {
 }
 
 dependencies {
-    // Common module has no direct dependencies
-    // Loader-specific modules will compile against this
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
 }
 
 test {
