@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-    // Common module has no direct dependencies
-    // Loader-specific modules will compile against this
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
 }
 
 tasks.withType(JavaCompile).configureEach {
