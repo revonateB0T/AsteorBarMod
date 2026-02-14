@@ -1,7 +1,5 @@
 package com.afoxxvi.asteorbar.mixin;
 
-import com.afoxxvi.asteorbar.network.NetworkHandler;
-import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,9 +19,6 @@ public abstract class ServerEntityMixin {
     @Final
     private Entity entity;
 
-    @Shadow
-    protected abstract void broadcastAndSend(Packet<?> packet);
-
     @Unique
     private float asteorBar$lastAbsorption = -1.0f;
 
@@ -36,9 +31,7 @@ public abstract class ServerEntityMixin {
         float currentAbsorption = livingEntity.getAbsorptionAmount();
         if (Math.abs(currentAbsorption - asteorBar$lastAbsorption) > EPS) {
             asteorBar$lastAbsorption = currentAbsorption;
-            // Send update to client
-            var packet = NetworkHandler.createAbsorptionPacket(livingEntity.getId(), currentAbsorption);
-            broadcastAndSend(packet);
+            // Network functionality removed - absorption tracking only
         }
     }
 }
