@@ -368,132 +368,6 @@ public class FabricConfigAdapter implements ConfigAdapter {
     }
 
     @Override
-    public boolean enableHealthBar() {
-        return config.entity.enableHealthBar;
-    }
-
-    @Override
-    public void enableHealthBar(boolean enable) {
-        config.entity.enableHealthBar = enable;
-        holder.save();
-    }
-
-    @Override
-    public double maxDistance() {
-        return config.entity.maxDistance;
-    }
-
-    @Override
-    public boolean showOnSelf() {
-        return config.entity.showOnSelf;
-    }
-
-    @Override
-    public boolean showOnPlayers() {
-        return config.entity.showOnPlayers;
-    }
-
-    @Override
-    public boolean showOnBosses() {
-        return config.entity.showOnBosses;
-    }
-
-    @Override
-    public boolean showOnArmorStands() {
-        return config.entity.showOnArmorStands;
-    }
-
-    @Override
-    public boolean showOnFullHealthWithoutAbsorption() {
-        return config.entity.showOnFullHealthWithoutAbsorption;
-    }
-
-    @Override
-    public boolean showOnFullHealthWithAbsorption() {
-        return config.entity.showOnFullHealthWithAbsorption;
-    }
-
-    @Override
-    public int healthBarAlpha() {
-        return config.entity.healthBarAlpha;
-    }
-
-    @Override
-    public int healthBarHalfWidth() {
-        return config.entity.healthBarHalfWidth;
-    }
-
-    @Override
-    public int healthBarHalfHeight() {
-        return config.entity.healthBarHalfHeight;
-    }
-
-    @Override
-    public double healthBarOffsetY() {
-        return config.entity.healthBarOffsetY;
-    }
-
-    @Override
-    public double healthBarScale() {
-        return config.entity.healthBarScale;
-    }
-
-    @Override
-    public double healthBarTextScale() {
-        return config.entity.healthBarTextScale;
-    }
-
-    @Override
-    public double healthBarTextOffsetY() {
-        return config.entity.healthBarTextOffsetY;
-    }
-
-    @Override
-    public int healthBarBoundWidth() {
-        return config.entity.healthBarBoundWidth;
-    }
-
-    @Override
-    public boolean healthBarBoundVertex() {
-        return config.entity.healthBarBoundVertex;
-    }
-
-    @Override
-    public String healthBarHealthColorARGB() {
-        return config.entity.healthBarHealthColorARGB;
-    }
-
-    @Override
-    public String healthBarAbsorptionColorARGB() {
-        return config.entity.healthBarAbsorptionColorARGB;
-    }
-
-    @Override
-    public String healthBarBoundColorARGB() {
-        return config.entity.healthBarBoundColorARGB;
-    }
-
-    @Override
-    public String healthBarEmptyColorARGB() {
-        return config.entity.healthBarEmptyColorARGB;
-    }
-
-    @Override
-    public boolean healthBarHealthColorDynamic() {
-        return config.entity.healthBarHealthColorDynamic;
-    }
-
-    @Override
-    public String healthBarHealthColorFullARGB() {
-        return config.entity.healthBarHealthColorFullARGB;
-    }
-
-    @Override
-    public String healthBarHealthColorEmptyARGB() {
-        return config.entity.healthBarHealthColorEmptyARGB;
-    }
-
-    @Override
     public boolean hookToughAsNails() {
         return config.hook.hookToughAsNails;
     }
@@ -592,8 +466,6 @@ public class FabricConfigAdapter implements ConfigAdapter {
     public static class AsteorBarConfig implements ConfigData {
         @ConfigEntry.Gui.CollapsibleObject
         OverlayConfig overlay = new OverlayConfig();
-        @ConfigEntry.Gui.CollapsibleObject
-        EntityConfig entity = new EntityConfig();
         @ConfigEntry.Gui.CollapsibleObject
         HookConfig hook = new HookConfig();
 
@@ -737,58 +609,6 @@ public class FabricConfigAdapter implements ConfigAdapter {
             public int cornerVerticalPadding = DefaultConfigAdapter.I.cornerVerticalPadding();
             @Comment(ConfigComment.forceRenderAtCorner)
             public boolean forceRenderAtCorner = DefaultConfigAdapter.I.forceRenderAtCorner();
-        }
-
-        //mob config
-        static class EntityConfig {
-            @Comment(ConfigComment.enableHealthBar)
-            public boolean enableHealthBar = DefaultConfigAdapter.I.enableHealthBar();
-            @Comment(ConfigComment.maxDistance)
-            public double maxDistance = DefaultConfigAdapter.I.maxDistance();
-            @Comment(ConfigComment.showOnSelf)
-            public boolean showOnSelf = DefaultConfigAdapter.I.showOnSelf();
-            @Comment(ConfigComment.showOnPlayers)
-            public boolean showOnPlayers = DefaultConfigAdapter.I.showOnPlayers();
-            @Comment(ConfigComment.showOnBosses)
-            public boolean showOnBosses = DefaultConfigAdapter.I.showOnBosses();
-            @Comment(ConfigComment.showOnArmorStands)
-            public boolean showOnArmorStands = DefaultConfigAdapter.I.showOnArmorStands();
-            @Comment(ConfigComment.showOnFullHealthWithoutAbsorption)
-            public boolean showOnFullHealthWithoutAbsorption = DefaultConfigAdapter.I.showOnFullHealthWithoutAbsorption();
-            @Comment(ConfigComment.showOnFullHealthWithAbsorption)
-            public boolean showOnFullHealthWithAbsorption = DefaultConfigAdapter.I.showOnFullHealthWithAbsorption();
-            @Comment(ConfigComment.healthBarAlpha)
-            public int healthBarAlpha = DefaultConfigAdapter.I.healthBarAlpha();
-            @Comment(ConfigComment.healthBarHalfWidth)
-            public int healthBarHalfWidth = DefaultConfigAdapter.I.healthBarHalfWidth();
-            @Comment(ConfigComment.healthBarHalfHeight)
-            public int healthBarHalfHeight = DefaultConfigAdapter.I.healthBarHalfHeight();
-            @Comment(ConfigComment.healthBarOffsetY)
-            public double healthBarOffsetY = DefaultConfigAdapter.I.healthBarOffsetY();
-            @Comment(ConfigComment.healthBarScale)
-            public double healthBarScale = DefaultConfigAdapter.I.healthBarScale();
-            @Comment(ConfigComment.healthBarTextScale)
-            public double healthBarTextScale = DefaultConfigAdapter.I.healthBarTextScale();
-            @Comment(ConfigComment.healthBarTextOffsetY)
-            public double healthBarTextOffsetY = DefaultConfigAdapter.I.healthBarTextOffsetY();
-            @Comment(ConfigComment.healthBarBoundWidth)
-            public int healthBarBoundWidth = DefaultConfigAdapter.I.healthBarBoundWidth();
-            @Comment(ConfigComment.healthBarBoundVertex)
-            public boolean healthBarBoundVertex = DefaultConfigAdapter.I.healthBarBoundVertex();
-            @Comment(ConfigComment.healthBarHealthColor)
-            public String healthBarHealthColorARGB = DefaultConfigAdapter.I.healthBarHealthColorARGB();
-            @Comment(ConfigComment.healthBarAbsorptionColor)
-            public String healthBarAbsorptionColorARGB = DefaultConfigAdapter.I.healthBarAbsorptionColorARGB();
-            @Comment(ConfigComment.healthBarBoundColor)
-            public String healthBarBoundColorARGB = DefaultConfigAdapter.I.healthBarBoundColorARGB();
-            @Comment(ConfigComment.healthBarEmptyColor)
-            public String healthBarEmptyColorARGB = DefaultConfigAdapter.I.healthBarEmptyColorARGB();
-            @Comment(ConfigComment.healthBarHealthColorDynamic)
-            public boolean healthBarHealthColorDynamic = DefaultConfigAdapter.I.healthBarHealthColorDynamic();
-            @Comment(ConfigComment.healthBarHealthColorFull)
-            public String healthBarHealthColorFullARGB = DefaultConfigAdapter.I.healthBarHealthColorFullARGB();
-            @Comment(ConfigComment.healthBarHealthColorEmpty)
-            public String healthBarHealthColorEmptyARGB = DefaultConfigAdapter.I.healthBarHealthColorEmptyARGB();
         }
 
         static class HookConfig {
