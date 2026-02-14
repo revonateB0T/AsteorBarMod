@@ -12,6 +12,5 @@ public class ModEventListener {
     @SubscribeEvent
     public static void registerKeyMapping(RegisterKeyMappingsEvent event) {
         event.register(KeyBinding.TOGGLE_OVERLAY);
-        event.register(KeyBinding.TOGGLE_MOB_BAR);
     }
 }
