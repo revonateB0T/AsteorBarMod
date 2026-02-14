@@ -9,7 +9,6 @@ public class AsteorBarFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         KeyBindingHelper.registerKeyBinding(KeyBinding.TOGGLE_OVERLAY);
-        KeyBindingHelper.registerKeyBinding(KeyBinding.TOGGLE_MOB_BAR);
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             KeyBinding.handleKeyInput();
         });
